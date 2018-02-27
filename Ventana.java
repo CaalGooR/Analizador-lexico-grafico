@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
 
 public class Ventana implements ActionListener{
 
@@ -12,6 +13,7 @@ public class Ventana implements ActionListener{
   private JButton btn;
   private JLabel lbl1;
   private JTextField txtCadena;
+  private Analizador analizar;
 
   public Ventana() {
     inicializarComponentes();
@@ -43,8 +45,12 @@ public class Ventana implements ActionListener{
   }
 
   public void actionPerformed(ActionEvent e) {
-    if (e.getSource() == btn)
-      System.out.println("Agregar Comando");
+    if (e.getSource() == btn) {
+      if (txtCadena.getText().equals(""))
+        JOptionPane.showMessageDialog(null,"No hay texto");
+      else
+        analizar = new Analizador(txtCadena.getText());
+    }
   }
 
 }

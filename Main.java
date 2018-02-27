@@ -6,6 +6,6 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    Analizador analizar = new Analizador("g");
+    Ventana vent = new Ventana();
   }
 }
